@@ -14,8 +14,13 @@ const Highcharts = {
 }
 
 async function download(country) {
-    let res = await axios.get(link.replace('xxx', country));
-    fs.writeFileSync(`../data/${country}.html`, res.data);
+    try {
+        let res = await axios.get(link.replace('xxx', country));
+        fs.writeFileSync(`../data/${country}.html`, res.data);
+        console.log(country);
+    } catch(err) {
+        console.log(country + ' failed to download');
+    }
 }
 
 async function processContent(content) {
