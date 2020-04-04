@@ -42,7 +42,7 @@ async function processCountry(country) {
 
 // let cc = Array.prototype.map.call(document.querySelectorAll('a.mt_a'), a => { var aa = a.href.split('country/'); return aa[1].replace('/','') })
 
-const countries = ["china", "italy", "us", "spain", "germany", "iran", "france", "switzerland", "south-korea", "uk", "netherlands", "austria", "belgium", "norway", "canada", "portugal", "australia", "sweden", "brazil", "malaysia", "denmark", "ireland", "poland", "greece", "indonesia", "philippines", "china-hong-kong-sar", "iraq", "algeria", "china", "italy", "us", "spain", "germany", "iran", "france", "south-korea", "switzerland", "uk", "netherlands", "austria", "belgium", "norway", "canada", "portugal", "sweden", "brazil", "australia", "malaysia", "denmark", "ireland", "poland", "greece", "indonesia", "philippines", "china-hong-kong-sar", "iraq", "algeria"]
+const countries = ["us", "italy", "spain", "china", "germany", "iran", "france", "uk", "switzerland", "belgium","netherlands", "south-korea", "turkey", "austria", "canada", "portugal", "israel", "norway", "brazil", "australia", "sweden", "malaysia", "ireland", "denmark", "poland", "philippines", "indonesia", "greece", "india", "china-hong-kong-sar", "iraq", "algeria"]
 // const countries = ["china", "italy", "us", "spain", "philippines"]
 
 countries.forEach(c => { download(c)});
