@@ -6,13 +6,6 @@ const axios = require('axios');
 const link = 'https://www.worldometers.info/coronavirus/country/xxx';
 let currentCountry;
 
-const Highcharts = {
-    setOptions: () => {},
-    chart: (title, data) => {
-        fs.writeFileSync(`../data/${currentCountry}-${title}.json`, JSON.stringify(data, null, 4));
-    }
-}
-
 async function download(country) {
     try {
         let res = await axios.get(link.replace('xxx', country));
@@ -20,32 +13,6 @@ async function download(country) {
         console.log(country);
     } catch(err) {
         console.log(country + ' failed to download');
-    }
-}
-
-async function processContent(content) {
-    let dom = new JSDOM(content);
-    let doc = dom.window.document;
-
-    // console.log(content);
-    // console.log(dom);
-
-    let scs = doc.querySelectorAll('script');
-    Array.prototype.forEach.call(scs, s => {
-        let code = s.innerHTML;
-        if (code.includes('Highcharts') && code.includes('title')) {
-            eval(code);
-        }
-    });
-}
-
-async function processCountry(country) {
-    currentCountry = country;
-    try {
-        let content = fs.readFileSync(`../data/${country}.html`);
-        processContent(content);
-    } catch (err) {
-        console.log(`!!${country}`);
     }
 }
 
@@ -63,8 +30,7 @@ const countries = ["us","spain","italy","france","germany","uk","china","iran","
 // 'ethiopia',
 // 'western-sahara']
 
-// countries.forEach(c => { download(c)});
-countries.forEach(c => { processCountry(c)});
+countries.forEach(c => { download(c)});
 
 // download('italy');
 // download('philippines');

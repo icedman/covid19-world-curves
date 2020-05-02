@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 
 import http from 'axios';
 
-const countries = ["us", "italy", "spain", "china", "germany", "iran", "france", "uk", "switzerland", "belgium","netherlands", "south-korea", "turkey", "austria", "canada", "portugal", "israel", "norway", "brazil", "australia", "sweden", "malaysia", "ireland", "denmark", "poland", "philippines", "indonesia", "greece", "india", "china-hong-kong-sar", "iraq", "algeria"] // const countries = ["china", "italy", "us", "spain", "philippines"]
+const countries = ["singapore", "us", "italy", "spain", "china", "germany", "iran", "france", "uk", "switzerland", "belgium","netherlands", "south-korea", "turkey", "austria", "canada", "portugal", "israel", "norway", "brazil", "australia", "sweden", "malaysia", "ireland", "denmark", "poland", "philippines", "indonesia", "greece", "india", "china-hong-kong-sar", "iraq", "algeria"] // const countries = ["china", "italy", "us", "spain", "philippines"]
 // const countries = ["us", "italy", "spain", "china", "philippines"]
 
 
